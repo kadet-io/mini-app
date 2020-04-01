@@ -93,7 +93,7 @@ router.post('/recipient',(req, res) => {
                 voucher.comparecode(req.body.code, function(err, match) {
                     if (match && !err) {
                       var offer = voucher.offer
-                      offer.findById({_id: offer}, (err, res) =>{
+                      offer.findById(req.params.id , (err, res) =>{
                           if(err){
                             res.json({
                                 success: false,
