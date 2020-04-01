@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const voucherSchema = schema({
     code : {
         type : String,
-         required: 'Code is required'
+         required: 'Code is required..'
         },
     recepient : {
         type : Schema.Types.ObjectId, 
