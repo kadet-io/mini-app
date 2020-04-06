@@ -152,7 +152,7 @@ router.get('/verify-voucher',  (req, res) => {
         Voucher.findOne({offer: req.body.offer, recepient: id}, (err, voucher)=>{
             let exp = new Date(voucher.expiryDate)
             let currDate = new Date()
-            if(voucher.used == false && currDate > exp ){
+            if(voucher.used == false && currDate < exp ){
                 voucher.comparecode(req.body.code, function(err, match) {
                     if (match && !err) {
                       let offer = voucher.offer
