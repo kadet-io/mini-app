@@ -13,17 +13,17 @@ const voucher = Schema({
 })
 
 voucher.pre("save", function(next){
-    const mycode = this;
+    const hashcode = this;
     if(this.isModified("code") || this.isNew){
         bcyrpt.genSalt(10, function(err, salt){
             if(err){
                 return next(err);
             }
-            bcyrpt.hash(mycode.code, salt, (err, hash) => {
+            bcyrpt.hash(hashcode.code, salt, (err, hash) => {
                 if(err){
                     return next(err);
                 }
-                mycode.code = hash;
+                hashcode.code = hash;
                 next();
                 
             })

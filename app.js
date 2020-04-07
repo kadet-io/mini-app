@@ -5,7 +5,8 @@ const dotenv = require('dotenv').config()
 const app = express();
 const routes = require('./route/route')
 
-mongoose.connect("mongodb://localhost:27017/voucher",{useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex:true}, ()=>{
+const db = process.env.DB
+mongoose.connect(db,{useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex:true}, ()=>{
     console.log("connected to DB")
 })
 app.use(bodyparser.urlencoded({
