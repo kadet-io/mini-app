@@ -4,28 +4,28 @@ const Schema = mongoose.Schema;
 
 const VoucherCodeSchema = new Schema({
 
-    voucher_code:{
+    voucher_code: {
         type: String,
         required: true
-    } ,
-    current_date:{
+    },
+    current_date: {
         type: Date,
-        required:true,
+        required: true,
         default: Date.now
 
     },
-    expiration_date:{
-        type: Date,        
+    expiration_date: {
+        type: Date,
         required: true,
     },
-    recipient : {
-        type : Schema.Types.ObjectId,  
+    recipient: {
+        type: Schema.Types.ObjectId,
         ref: 'Recipient'
     },
-    special_offer : {
-        type : Schema.Types.ObjectId, 
-         ref: 'SpecialOffer'
-        },
+    special_offer: {
+        type: Schema.Types.ObjectId,
+        ref: 'SpecialOffer'
+    },
     used: {
         type: Boolean,
         default: false
@@ -35,8 +35,8 @@ const VoucherCodeSchema = new Schema({
         default: null
     }
 
-        
+
 })
 
 
-module.exports= mongoose.model('VoucherCode', VoucherCodeSchema);
+module.exports = mongoose.model('VoucherCode', VoucherCodeSchema);

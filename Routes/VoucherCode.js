@@ -9,5 +9,6 @@ router.post('/createvoucherdata', voucherdata_controller.create_voucherdata)
 
 router.get('/percentagediscount', voucherdata_controller.percentageDiscount)
 
+router.get('/allvalidvoucherandname', voucherdata_controller.allValidVoucherAndName)
 
 module.exports = router
