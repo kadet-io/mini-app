@@ -1,7 +1,4 @@
 const SpecialOffer = require('../models/SpecialOffer.model');
-const moment = require('moment');
-var randomstring = require("randomstring");
-
 
 exports.offer_list = async (req, res) => {
     try {
