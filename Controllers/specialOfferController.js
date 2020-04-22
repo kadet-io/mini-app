@@ -31,12 +31,13 @@ exports.get_specialOffer = async (req, res, next) => {
         offer = await SpecialOffer.findById(req.params.id)
         if (offer == null) {
             return res.status(404).json({ message: 'Cant find Offer' })
+        }else{
+            return res.status(200).json(offer)
+
         }
     } catch (err) {
         return res.status(500).json({ message: err.message })
     }
-    res.offer = offer
-    next()
 }
 
 

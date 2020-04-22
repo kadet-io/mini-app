@@ -8,6 +8,7 @@ router.get('/', recipient_controller.recipient_list )
 
 // Get one recipient
 router.get('/:id', recipient_controller.get_recipient, (req, res) => {
+  res.recipient = recipient
     res.json(res.recipient)
 })
 

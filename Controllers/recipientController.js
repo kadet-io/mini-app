@@ -31,10 +31,11 @@ exports.get_recipient = async (req, res, next) => {
     if (recipient == null) {
       return res.status(404).json({ message: 'Cant find recipient' })
     }
+    else{
+      return res.status(200).json(recipient)
+    }
   } catch (err) {
     return res.status(500).json({ message: err.message })
   }
 
-  res.recipient = recipient
-  next()
 }
